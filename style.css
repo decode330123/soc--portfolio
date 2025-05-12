@@ -83,6 +83,15 @@ section.home {
     padding: 3rem;
 }
 
+.page h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #00bcd4;
+    border-bottom: 2px solid #00bcd4;
+    padding-bottom: 0.5rem;
+}
+
 /* Cards */
 .card-grid {
     display: grid;
