@@ -1,39 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My SOC Analyst Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div id="loader"></div>
+    <header class="navbar">
+        <a href="#" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </header>
 
-  <nav class="navbar">
-    <a href="index.html" class="nav-logo">SOC Analyst</a>
-    <div class="nav-links">
-      <a href="btlo.html">BTLO</a>
-      <a href="tools.html">Tools</a>
-      <a href="certs.html">Certifications</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+    <!-- Home Section -->
+    <section class="home">
+        <h1>Welcome to My Portfolio</h1>
+        <p>A Cybersecurity Enthusiast Passionate About Protecting Systems</p>
+    </section>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="typing">Hello, I'm a SOC Analyst in the Making</h1>
-      <p>Passionate about Cybersecurity | Log Analysis | Digital Forensics</p>
-      <a href="tools.html" class="btn">Explore My Tools</a>
-    </div>
-    <div class="cyber-image">
-      <img src="assets/images/lock-protection-privacy-cyber-security-safety-svgrepo-com.svg" alt="Cybersecurity Illustration" />
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I’m a cybersecurity analyst with a strong foundation in network defense and security principles. I am continuously expanding my knowledge to stay ahead in this ever-evolving field.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-card">
+            <img src="project1.svg" alt="Project 1" class="icon">
+            <h3>Project 1</h3>
+            <p>Brief description of the project.</p>
+        </div>
+        <div class="project-card">
+            <img src="project2.svg" alt="Project 2" class="icon">
+            <h3>Project 2</h3>
+            <p>Brief description of the project.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="mailto:email@example.com">Email</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
