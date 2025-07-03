@@ -3,60 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sigma Rules</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <title>Sigma Rules - SOC Analyst Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
 <body>
 
-<div id="loader"></div>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a href="index.html" class="navbar-brand">SOC Analyst</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navLinks">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a href="btlo.html" class="nav-link">BTLO</a></li>
-        <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
-        <li class="nav-item"><a href="certs.html" class="nav-link">Certifications</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a href="sigma.html" class="nav-link active">Sigma Rules</a></li>
-      </ul>
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">SOC Analyst</a>
+    <div class="nav-links">
+      <a href="btlo.html" class="nav-link">BTLO</a>
+      <a href="tools.html" class="nav-link">Tools</a>
+      <a href="certs.html" class="nav-link">Certifications</a>
+      <a href="sigma.html" class="nav-link active">Sigma</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<section class="container my-5">
-  <h2>Sigma Rules</h2>
-  <p>This section can showcase your custom Sigma detection rules or explanations. Below is an example of a Sigma rule JSON snippet.</p>
-  <pre class="bg-light p-3 rounded">
-{
-  "title": "Suspicious PowerShell Command",
-  "id": "12345678-90ab-cdef-1234-567890abcdef",
-  "description": "Detects suspicious PowerShell commands used in attacks",
-  "logsource": {
-    "category": "process_creation",
-    "product": "windows"
-  },
-  "detection": {
-    "selection": {
-      "Image|endswith": "powershell.exe",
-      "CommandLine|contains": [
-        "-EncodedCommand",
-        "Invoke-Expression"
-      ]
-    },
-    "condition": "selection"
-  },
-  "level": "high"
-}
-  </pre>
-</section>
+  <main class="page container">
+    <h2 class="section-title">Sigma Rules</h2>
+    <p class="section-subtitle">
+      Sigma is an open standard for writing SIEM rules to detect suspicious or malicious behavior across platforms.
+    </p>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <section>
+      <h3>About Sigma</h3>
+      <p>
+        Sigma rules provide a generic way to describe detection logic for security events, making it easier to share and implement across different tools like Splunk, Elastic, or Azure Sentinel.
+      </p>
+    </section>
+
+    <section>
+      <h3>Sample Sigma Rule: Detect Failed Login Attempts</h3>
+      <pre class="code-block">
+title: Failed Login Attempts
+id: abc1234
+status: experimental
+description: Detects multiple failed login attempts in a short time
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4625
+  condition: selection | count() &gt; 5 within 5m
+fields:
+  - EventID
+  - TargetUserName
+  - SourceIpAddress
+level: medium
+      </pre>
+    </section>
+
+    <section>
+      <h3>My Sigma Rule Contributions</h3>
+      <ul>
+        <li>Created rules for detecting PowerShell suspicious activity.</li>
+        <li>Developed rules to identify brute force attacks and unusual file executions.</li>
+        <li>Tested Sigma rules with open-source SIEM tools.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Useful Links</h3>
+      <ul>
+        <li><a href="https://github.com/SigmaHQ/sigma" target="_blank" rel="noopener noreferrer">Official Sigma GitHub</a></li>
+        <li><a href="https://github.com/decode330123/sigma-rules" target="_blank" rel="noopener noreferrer">My Sigma Rules Repository</a></li>
+      </ul>
+    </section>
+
+  </main>
+
 </body>
 </html>
