@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sigma Rules</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="btlo.html">BTLO</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="sigma.html">Sigma</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <section>
+    <h1>Sigma Rules</h1>
+    <p>Sigma is an open standard for writing detection rules for SIEMs.</p>
+    <h2>Example Rule: Suspicious Base64 Execution</h2>
+    <pre>
+title: Suspicious Base64 in Command Line
+logsource:
+  category: process_creation
+detection:
+  selection:
+    CommandLine|contains: "base64"
+  condition: selection
+level: medium
+    </pre>
+    <p>This detects base64 usage in command lines, which is common in obfuscated attacks.</p>
+  </section>
+</body>
+</html>
