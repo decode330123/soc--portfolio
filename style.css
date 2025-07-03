@@ -1,183 +1,16 @@
-/* Loader */
-#loader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    z-index: 1000;
-    animation: fadeOut 2s forwards;
-}
-
-@keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0; visibility: hidden;}
-}
-
-/* === General Reset === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* === Body and Background === */
-body {
-  background-color: #121212; /* black base */
-  color: #bbbbbb; /* light gray text */
-  min-height: 100vh;
-}
-
-/* === Navbar === */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: #1a1a1a; /* slightly lighter black */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(30, 144, 255, 0.2); /* subtle blue shadow */
-}
-
-.nav-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1e90ff; /* blue */
-  text-decoration: none;
-}
-
-.nav-links a {
-  margin-left: 1.8rem;
-  color: #bbbbbb; /* light gray */
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #00ffff; /* electric cyan */
-  text-shadow: 0 0 8px #00ffff;
-}
-
-.nav-links a.active {
-  color: #1e90ff;
-  border-bottom: 2px solid #1e90ff;
-}
-
-/* === Sections === */
-section.home,
-section.page {
-  padding: 3rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* === Home Page Title === */
-.home h1 {
-  font-size: 2.8rem;
-  color: #1e90ff;
-  margin-bottom: 1rem;
-}
-
-.home p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: #bbbbbb;
-}
-
-/* === Cards Grid === */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-/* === Cards === */
-.card {
-  background-color: #1a1a1a;
-  border: 2px solid #1e90ff;
-  border-radius: 10px;
-  padding: 1.3rem;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(30, 144, 255, 0.15);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 0 18px #00ffff;
-  transform: translateY(-8px);
-}
-
-.card img {
-  width: 100%;
-  height: 140px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-}
-
-/* === Headings for sections === */
-.page h2,
-.page h3 {
-  color: #1e90ff;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.page h3 {
-  border-bottom: 2px solid #1e90ff;
-  padding-bottom: 0.3rem;
-  margin-top: 2.5rem;
-}
-
-/* === Links and Buttons === */
-a, button {
-  color: #bbbbbb;
-  cursor: pointer;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-a:hover, button:hover {
-  color: #00ffff;
-  text-shadow: 0 0 6px #00ffff;
-}
-
-/* === Typing effect on home === */
-.typing {
-  font-size: 2rem;
-  color: #1e90ff;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #00ffff;
-  animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-/* === Loader === */
-#loader {
-/* Add this to your style.css or in a <style> tag */
+/* === Loader Styles === */
 #loader {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: #0d1117;
+  width: 100%;
+  height: 100%;
+  background: #0d1117; /* dark background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
 
 #loader::after {
@@ -192,4 +25,28 @@ a:hover, button:hover {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* === General Reset and other styles === */
+/* (Keep the rest of your styles here, unchanged) */
+
+/* Navbar links active and hover with smooth border bottom */
+.nav-links a {
+  margin-left: 1.8rem;
+  color: #bbbbbb;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, text-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+  border-bottom-color: #00ffff;
+}
+
+.nav-links a.active {
+  color: #1e90ff;
+  border-bottom-color: #1e90ff;
 }
