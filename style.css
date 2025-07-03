@@ -3,7 +3,7 @@
     position: fixed;
     width: 100%;
     height: 100%;
-    background: #0d0b17; /* very dark purple/black */
+    background: #000;
     z-index: 1000;
     animation: fadeOut 2s forwards;
 }
@@ -20,13 +20,10 @@
     box-sizing: border-box;
 }
 
-/* Body & Fonts */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #1a152f; /* dark purple-black */
-    color: #c8c8ff; /* light neon purple */
-    line-height: 1.6;
-    min-height: 100vh;
+    background-color: #121212;
+    color: #eee;
 }
 
 /* Navbar */
@@ -34,44 +31,38 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background: rgba(38, 26, 70, 0.85); /* translucent dark purple */
+    background: rgba(30, 30, 30, 0.8); /* transparent dark */
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 0 15px #6f42c1cc;
+    backdrop-filter: blur(5px); /* add blur */
 }
 
 .nav-logo {
-    color: #bb86fc; /* neon purple */
-    font-size: 1.7rem;
-    font-weight: 700;
+    color: #8a79d6; /* softer purple */
+    font-size: 1.5rem;
+    font-weight: bold;
     text-decoration: none;
-    letter-spacing: 1.5px;
-    text-shadow: 0 0 8px #bb86fcaa;
 }
 
 .nav-links a {
     margin-left: 2rem;
-    color: #d0cfff;
+    color: #ccc;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #d4bbff;
-    text-shadow: 0 0 8px #d4bbffcc;
+    color: #8a79d6;
 }
 
 .nav-links a.active {
-    color: #e6ccff;
-    border-bottom: 2px solid #e6ccff;
-    text-shadow: 0 0 12px #e6ccff;
+    color: #9b86ff;
+    border-bottom: 2px solid #9b86ff;
 }
 
-/* Section - home, page, content wrapper */
+/* Sections */
 section.home {
     height: 80vh;
     display: flex;
@@ -79,25 +70,16 @@ section.home {
     justify-content: center;
     align-items: center;
     text-align: center;
-    animation: fadeSlide 1.5s ease forwards;
-    color: #dcd6ff;
+    animation: fadeSlide 1.5s ease;
 }
 
 @keyframes fadeSlide {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity: 0; transform: translateY(50px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
 .page {
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 3rem;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 1s ease forwards;
@@ -111,29 +93,16 @@ section.home {
     }
 }
 
-/* Headings */
-h1, h2, h3 {
-    color: #c7baff;
-    text-shadow: 0 0 8px #c7baffaa;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-}
-
-h2 {
-    font-size: 2.2rem;
-    margin-top: 2rem;
-}
-
-h3 {
-    font-size: 1.8rem;
+.page h3 {
     margin-top: 3rem;
-    margin-bottom: 1.2rem;
-    border-bottom: 2px solid #bb86fc;
-    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #8a79d6; /* softer purple */
+    border-bottom: 2px solid #8a79d6;
+    padding-bottom: 0.5rem;
 }
 
-/* Card Grid */
+/* Cards */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -141,48 +110,32 @@ h3 {
     margin-top: 2rem;
 }
 
-/* Card Styling */
 .card {
-    background: #2e2550;
-    border-radius: 12px;
+    background: #1e1e1e;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 15px #9a81ff88;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 1rem 1.5rem;
+    box-shadow: 0 0 8px rgba(138, 121, 214, 0.3); /* subtle purple glow */
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 1rem;
     text-align: center;
-    color: #e1dfff;
-    user-select: none;
 }
 
 .card img {
     width: 100%;
-    height: 140px;
+    height: 150px;
     object-fit: contain;
-    background-color: #2e2550;
-    padding: 12px;
-    border-radius: 12px 12px 0 0;
-    border-bottom: 1px solid #503d9f;
-    filter: drop-shadow(0 0 8px #b59affcc);
-    transition: filter 0.3s ease;
+    background-color: #222;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    border-radius: 10px 10px 0 0;
 }
 
-.card p {
-    margin-top: 0.8rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-/* Card hover effect */
 .card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 0 28px #bb86fcdd;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(138, 121, 214, 0.5); /* softer glow on hover */
 }
 
-.card:hover img {
-    filter: drop-shadow(0 0 12px #d2bbffdd);
-}
-
-/* Contact Section */
+/* Contact */
 .contact-links {
     margin-top: 2rem;
     display: flex;
@@ -191,27 +144,20 @@ h3 {
 }
 
 .contact-links a {
-    color: #bb86fc;
+    color: #8a79d6;
     font-size: 1.2rem;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-.contact-links a:hover {
-    color: #d4bbff;
-    text-shadow: 0 0 10px #d4bbffcc;
-}
-
-/* Typing effect + fade-in for h1 (if used) */
+/* Typing effect + fade-in for h1 */
 .typing {
-    font-size: 2.2rem;
-    color: #d4bbff;
+    font-size: 2rem;
+    color: #eee;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid #d4bbff;
+    border-right: 3px solid #8a79d6; /* softer purple cursor */
     width: 0;
     animation: typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite;
-    text-shadow: 0 0 10px #bb86fccc;
 }
 
 @keyframes typing {
@@ -230,33 +176,7 @@ h3 {
 .home p {
     opacity: 0;
     animation: fadeIn 2s ease 1s forwards;
-    color: #b3a7ff;
 }
 
-/* Scroll bar styling for modern browsers */
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1a152f;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #7c5eff;
-    border-radius: 5px;
-}
-
-/* Links globally */
-a {
-    color: #bb86fc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #d4bbff;
-    text-shadow: 0 0 10px #d4bbffcc;
-}
 
 
