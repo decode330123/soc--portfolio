@@ -6,17 +6,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="btlo.html">BTLO</a></li>
-      <li><a href="tools.html">Tools</a></li>
-      <li><a href="sigma.html">Sigma</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="sigma.html">Sigma</a></li>
-    </ul>
-  </nav>
-  <section>
+
+<div id="loader"></div>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-logo">SOC Analyst</a>
+    <div class="nav-links">
+        <a href="btlo.html">BTLO</a>
+        <a href="tools.html">Tools</a>
+        <a href="certs.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>    
+  
+  <section class="page">
     <h1>Sigma Rules</h1>
     <p>Sigma is an open standard for writing detection rules for SIEMs.</p>
     <h2>Example Rule: Suspicious Base64 Execution</h2>
