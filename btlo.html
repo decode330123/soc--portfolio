@@ -1,51 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BTLO Challenges</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 </head>
 <body>
 
 <div id="loader"></div>
 
-<nav class="navbar">
-    <a href="index.html" class="nav-logo">SOC Analyst</a>
-    <div class="nav-links">
-        <a href="btlo.html">BTLO</a>
-        <a href="tools.html">Tools</a>
-        <a href="certs.html">Certifications</a>
-        <a href="contact.html">Contact</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">SOC Analyst</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="btlo.html" class="nav-link active">BTLO</a></li>
+        <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
+        <li class="nav-item"><a href="certs.html" class="nav-link">Certifications</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="sigma.html" class="nav-link">Sigma Rules</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
 
-<section class="page">
-    <h2>BTLO Challenges</h2>
-    <div class="card-grid">
-        <div class="card">
-            <embed src="assets/pdfs/Report.pdf" type="application/pdf" width="100%" height="200px" />
-            <p>Investigation 1</p>
+<section class="container my-5">
+  <h2>BTLO Challenges</h2>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <embed src="assets/pdfs/Report.pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
+        <div class="card-body">
+          <p class="card-text">Investigation 1</p>
         </div>
-        <div class="card">
-            <embed src="assets/pdfs/converted_text (1).pdf" type="application/pdf" width="100%" height="200px" />
-            <p>Investigation 2</p>
-        </div>
-        <div class="card">
-            <embed src="assets/pdfs/Employee_of_the_Year_Report.pdf.pdf" type="application/pdf" width="100%" height="200px" />
-            <p>Investigation 3</p>
-        </div>
-        <div class="card">
-            <embed src="assets/pdfs/Paranoid_Report.pdf.pdf" type="application/pdf" width="100%" height="200px" />
-            <p>Investigation 4</p>
-        </div>
-
-
+      </div>
     </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <embed src="assets/pdfs/converted_text (1).pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
+        <div class="card-body">
+          <p class="card-text">Investigation 2</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <embed src="assets/pdfs/Employee_of_the_Year_Report.pdf.pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
+        <div class="card-body">
+          <p class="card-text">Investigation 3</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <embed src="assets/pdfs/Paranoid_Report.pdf.pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
+        <div class="card-body">
+          <p class="card-text">Investigation 4</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-</html>
+
 
 
