@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sigma Rules</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
 
 <div id="loader"></div>
 
-<nav class="navbar">
-    <a href="index.html" class="nav-logo">SOC Analyst</a>
-    <div class="nav-links">
-        <a href="btlo.html">BTLO</a>
-        <a href="tools.html">Tools</a>
-        <a href="certs.html">Certifications</a>
-        <a href="contact.html">Contact</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">SOC Analyst</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navLinks">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a href="btlo.html" class="nav-link">BTLO</a></li>
+        <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
+        <li class="nav-item"><a href="certs.html" class="nav-link">Certifications</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="sigma.html" class="nav-link active">Sigma Rules</a></li>
+      </ul>
     </div>
-</nav>    
-  
-  <section class="page">
-    <h1>Sigma Rules</h1>
-    <p>Sigma is an open standard for writing detection rules for SIEMs.</p>
-    <h2>Example Rule: Suspicious Base64 Execution</h2>
-    <pre>
-title: Suspicious Base64 in Command Line
-logsource:
-  category: process_creation
-detection:
-  selection:
-    CommandLine|contains: "base64"
-  condition: selection
-level: medium
-    </pre>
-    <p>This detects base64 usage in command lines, which is common in obfuscated attacks.</p>
-  </section>
+  </div>
+</nav>
+
+<section class="container my-5">
+  <h2>Sigma Rules</h2>
+  <p>This section can showcase your custom Sigma detection rules or explanations. Below is an example of a Sigma rule JSON snippet.</p>
+  <pre class="bg-light p-3 rounded">
+{
+  "title": "Suspicious PowerShell Command",
+  "id": "12345678-90ab-cdef-1234-567890abcdef",
+  "description": "Detects suspicious PowerShell commands used in attacks",
+  "logsource": {
+    "category": "process_creation",
+    "product": "windows"
+  },
+  "detection": {
+    "selection": {
+      "Image|endswith": "powershell.exe",
+      "CommandLine|contains": [
+        "-EncodedCommand",
+        "Invoke-Expression"
+      ]
+    },
+    "condition": "selection"
+  },
+  "level": "high"
+}
+  </pre>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
