@@ -1,151 +1,61 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SOC Analyst Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Courier+Prime&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
-  <style>
-   body {
-  background-color: #121212; /* dark black */
-  color: #bbbbbb; /* light gray text */
-  font-family: 'Fira Code', monospace;
-}
-
-.navbar {
-  background-color: #1a1a1a; /* slightly lighter black */
-}
-
-.nav-link,
-.navbar-brand {
-  color: #bbbbbb; /* light gray */
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.nav-link:hover,
-.navbar-brand:hover {
-  color: #00ffff; /* electric cyan */
-  text-shadow: 0 0 6px #00ffff;
-}
-
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  color: #1e90ff; /* bright blue */
-  text-shadow: 0 0 10px #1e90ff55;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #bbbbbb;
-}
-
-.section-title {
-  color: #1e90ff;
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-
-.card {
-  background-color: #1a1a1a;
-  border: 1px solid #1e90ff;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 0 10px #00ffff;
-  border-color: #00ffff;
-}
-
-.btn-outline-light {
-  border-color: #1e90ff;
-  color: #bbbbbb;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-light:hover {
-  background-color: #00ffff;
-  border-color: #00ffff;
-  color: #121212;
-}
-
-.footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-  color: #bbbbbb;
-}
-
-.footer a {
-  color: #1e90ff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 6px #00ffff;
-}
-</style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg px-3">
-    <a class="navbar-brand" href="index.html">SOC Analyst</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="btlo.html">BTLO</a></li>
-        <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
-        <li class="nav-item"><a class="nav-link" href="certs.html">Certifications</a></li>
-        <li class="nav-item"><a class="nav-link" href="sigma.html">Sigma</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <section class="hero">
-    <h1>Hi, I’m a SOC Analyst</h1>
-    <p>Specializing in Log Analysis, Threat Detection, and Incident Response.</p>
-  </section>
+<div id="loader"></div>
 
-  <div class="container">
-    <h2 class="section-title">Explore</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5>BTLO Challenges</h5>
-          <p>Hands-on investigations and reports based on real-world incidents.</p>
-          <a href="btlo.html" class="btn btn-outline-light btn-sm">View</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5>Security Tools</h5>
-          <p>Tools I use for analysis, DFIR, threat intelligence, and more.</p>
-          <a href="tools.html" class="btn btn-outline-light btn-sm">View</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5>Certifications</h5>
-          <p>Certs and training that validate my skills in cybersecurity.</p>
-          <a href="certs.html" class="btn btn-outline-light btn-sm">View</a>
-        </div>
-      </div>
-    </div>
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">SOC Analyst</a>
+  <div class="nav-links">
+    <a href="projects.html">Projects</a>
+    <a href="sigma.html">Sigma</a>
+    <a href="tools.html">Tools</a>
+    <a href="certs.html">Certifications</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section class="home">
+  <h1>Welcome to My SOC Analyst Portfolio</h1>
+  <p>Specializing in Threat Detection, Log Analysis, and Digital Forensics.</p>
+</section>
+
+<section class="section-grid">
+  <div class="card">
+    <h2>BTLO Projects</h2>
+    <p>Real-world incident reports and investigation write-ups.</p>
+    <a href="projects.html" class="btn">Explore Projects</a>
   </div>
 
-  <footer class="footer">
-    <p>&copy; 2025 SOC Analyst Portfolio | <a href="https://github.com/decode330123" target="_blank" style="color:#a970ff">GitHub</a></p>
-  </footer>
+  <div class="card">
+    <h2>Wireshark Docs</h2>
+    <p>Packet analysis notes and case studies using Wireshark.</p>
+    <a href="projects.html#wireshark" class="btn">View Docs</a>
+  </div>
+
+  <div class="card">
+    <h2>Sigma Rules</h2>
+    <p>Custom detection rules and threat hunting examples.</p>
+    <a href="sigma.html" class="btn">Go to Sigma</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p> <p>&copy; 2025 SOC Analyst Portfolio | <a href="https://github.com/decode330123">GitHub</a></p></p>
+</footer>
+
 </body>
 </html>
+
+
 
 
