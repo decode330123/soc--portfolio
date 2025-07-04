@@ -1,78 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sigma Rules - SOC Analyst Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sigma Rules - SOC Analyst Portfolio</title>
+    <meta name="description" content="Demonstrating understanding and practical application of Sigma rules for generic detection logic across SIEM platforms in a SOC Analyst context.">
+    <meta name="keywords" content="Sigma Rules, SIEM, Threat Detection, Detection Engineering, SOC Analyst, YAML, Cybersecurity">
+    <meta name="author" content="Aspiring SOC Analyst">
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png"> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-  <nav class="navbar">
-    <a href="index.html" class="nav-logo">SOC Analyst</a>
-    <div class="nav-links">
-      <a href="btlo.html" class="nav-link">BTLO</a>
-      <a href="tools.html" class="nav-link">Tools</a>
-      <a href="certs.html" class="nav-link">Certifications</a>
-      <a href="sigma.html" class="nav-link active">Sigma</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+<div id="loader"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">SOC Analyst</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="btlo.html">BTLO</a></li>
+        <li class="nav-item"><a class="nav-link" href="tools.html">Tools</a></li>
+        <li class="nav-item"><a class="nav-link" href="certs.html">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link active" href="sigma.html">Sigma Rules</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <main class="page container">
-    <h2 class="section-title">Sigma Rules</h2>
-    <p class="section-subtitle">
-      Sigma is an open standard for writing SIEM rules to detect suspicious or malicious behavior across platforms.
-    </p>
+<section class="container my-5">
+  <h2 class="section-title text-center mb-4">Sigma Rules</h2>
+  <p class="section-subtitle text-center mb-5">
+    Sigma is an open standard for writing generic detection logic for security events, enabling portability across various SIEM systems.
+  </p>
 
-    <section>
-      <h3>About Sigma</h3>
-      <p>
-        Sigma rules provide a generic way to describe detection logic for security events, making it easier to share and implement across different tools like Splunk, Elastic, or Azure Sentinel.
-      </p>
-    </section>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <section class="mb-5">
+        <h3 class="mb-3">About Sigma</h3>
+        <p>
+          Sigma rules provide a flexible and vendor-agnostic way to describe threat detection logic. This allows security analysts to define suspicious behavior once and then convert it into native queries for different SIEMs (like Splunk, Elastic, Microsoft Sentinel, etc.). It's a critical component of modern detection engineering, promoting collaboration and consistency in threat intelligence.
+        </p>
+      </section>
 
-    <section>
-      <h3>Sample Sigma Rule: Detect Failed Login Attempts</h3>
-      <pre class="code-block">
-title: Failed Login Attempts
-id: abc1234
+      <section class="mb-5">
+        <h3 class="mb-3">Sample Sigma Rule: Detect Failed Login Attempts</h3>
+        <p>
+          This example demonstrates a basic Sigma rule designed to identify multiple failed login attempts on a Windows system, indicating a potential brute-force attack.
+        </p>
+        <pre class="code-block language-yaml"><code>
+title: Failed Login Attempts - Brute Force Detection
+id: abc1234-5678-90ab-cdef-1234567890ab
 status: experimental
-description: Detects multiple failed login attempts in a short time
+description: Detects multiple failed login attempts from a single source within a short timeframe, indicative of a brute force attack.
+author: Your Name/Handle
 logsource:
   product: windows
   service: security
 detection:
   selection:
-    EventID: 4625
-  condition: selection | count() &gt; 5 within 5m
+    EventID: 4625 # Event ID for failed login attempts on Windows
+  timeframe: 5m
+  condition: selection | count() > 5 # More than 5 failed attempts in 5 minutes
 fields:
   - EventID
   - TargetUserName
-  - SourceIpAddress
+  - IpAddress # Or SourceIp if available
+  - ComputerName
 level: medium
-      </pre>
-    </section>
+tags:
+  - attack.attempt.brute_force
+  - attack.t1110 # MITRE ATT&CK: Brute Force
+</code></pre>
+        <p class="mt-3 text-muted">
+          <em>Note: Replace `Your Name/Handle` with your actual name or a suitable alias if contributing. The `id` should be a unique UUID.</em>
+        </p>
+      </section>
 
-    <section>
-      <h3>My Sigma Rule Contributions</h3>
-      <ul>
-        <li>Created rules for detecting PowerShell suspicious activity.</li>
-        <li>Developed rules to identify brute force attacks and unusual file executions.</li>
-        <li>Tested Sigma rules with open-source SIEM tools.</li>
-      </ul>
-    </section>
+      <section class="mb-5">
+        <h3 class="mb-3">My Sigma Rule Contributions & Experience</h3>
+        <p>
+          My work with Sigma rules involves translating threat intelligence and attack methodologies into actionable detection logic. Here are some examples of my contributions and areas of expertise:
+        </p>
+        <ul>
+          <li>
+            <strong>PowerShell Suspicious Activity:</strong> Developed and tested Sigma rules to detect obfuscated PowerShell commands, suspicious script execution, and common adversary techniques leveraging PowerShell for persistence or execution.
+          </li>
+          <li>
+            <strong>Brute Force & Unusual Executions:</strong> Created rules to identify brute force login attempts across various services and detect unusual process executions or unauthorized file modifications.
+          </li>
+          <li>
+            <strong>SIEM Integration & Testing:</strong> Gained experience in converting Sigma rules into formats compatible with open-source SIEM solutions (e.g., Elastic Stack) and validated their effectiveness against simulated attack scenarios.
+          </li>
+          <li>
+            <strong>Threat-Based Detections:</strong> Focused on building detections aligned with the MITRE ATT&CK Framework, specifically targeting techniques related to initial access, execution, and persistence.
+          </li>
+        </ul>
+      </section>
 
-    <section>
-      <h3>Useful Links</h3>
-      <ul>
-        <li><a href="https://github.com/SigmaHQ/sigma" target="_blank" rel="noopener noreferrer">Official Sigma GitHub</a></li>
-        <li><a href="https://github.com/decode330123/sigma-rules" target="_blank" rel="noopener noreferrer">My Sigma Rules Repository</a></li>
-      </ul>
-    </section>
+      <section>
+        <h3 class="mb-3">Useful Resources</h3>
+        <p>
+          Here are some valuable resources for learning more about Sigma and detection engineering:
+        </p>
+        <ul>
+          <li><a href="https://github.com/SigmaHQ/sigma" target="_blank" rel="noopener noreferrer" class="text-info">Official Sigma GitHub Repository</a> - The primary source for Sigma rules and documentation.</li>
+          <li><a href="https://sigmahq.io/" target="_blank" rel="noopener noreferrer" class="text-info">SigmaHQ Website</a> - Official website with more resources.</li>
+          <li><a href="https://github.com/your-github-repo-for-sigma-rules" target="_blank" rel="noopener noreferrer" class="text-info">Your GitHub Sigma Rules Repository (if applicable)</a> - Link to your own public repository if you have one.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
 
-  </main>
+<footer class="footer py-4">
+  <p>&copy; 2025 SOC Analyst Portfolio | Designed and Built by an Aspiring SOC Analyst | <a href="https://github.com/decode330123" target="_blank" rel="noopener noreferrer" style="color:#a970ff">GitHub</a></p>
+</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
