@@ -1,60 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SOC Analyst Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Libre+Baskerville&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="custom-navbar">
+    <div class="logo">SOC Analyst</div>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html">Projects</a></li>
+      <li><a href="#">BTLO</a></li>
+      <li><a href="#">TryHackMe</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><a href="certs.html">Contact Me</a></li>
+      <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+  </nav>
 
-<div id="loader"></div>
+  <header class="hero">
+    <h1>Welcome to My SOC Analyst Portfolio</h1>
+    <p>Explore my projects, labs, and learning journey in cybersecurity.</p>
+  </header>
 
-<nav class="navbar">
-  <a href="index.html" class="nav-logo">SOC Analyst</a>
-  <div class="nav-links">
-    <a href="project.html">Projects</a>
-    <a href="sigma.html">Sigma</a>
-    <a href="tools.html">Tools</a>
-    <a href="certs.html">Certifications</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
+  <footer>
+    <p>&copy; 2025 Your Name</p>
+  </footer>
 
-<section class="home">
-  <h1>Welcome to My SOC Analyst Portfolio</h1>
-  <p>Specializing in Threat Detection, Log Analysis, and Digital Forensics.</p>
-</section>
-
-<section class="section-grid">
-  <div class="card">
-    <h2>BTLO Projects</h2>
-    <p>Real-world incident reports and investigation write-ups.</p>
-    <a href="project.html" class="btn">Explore Projects</a>
-  </div>
-
-  <div class="card">
-    <h2>Wireshark Docs</h2>
-    <p>Packet analysis notes and case studies using Wireshark.</p>
-    <a href="project.html#wireshark" class="btn">View Docs</a>
-  </div>
-
-  <div class="card">
-    <h2>Sigma Rules</h2>
-    <p>Custom detection rules and threat hunting examples.</p>
-    <a href="sigma.html" class="btn">Go to Sigma</a>
-  </div>
-</section>
-
-<footer class="footer">
-  <p> <p>&copy; 2025 SOC Analyst Portfolio | <a href="https://github.com/decode330123">GitHub</a></p></p>
-</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
