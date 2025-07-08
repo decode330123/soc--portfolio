@@ -2,37 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact - SOC Analyst Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – SOC Analyst Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <div id="loader"></div>
-
-  <nav class="navbar">
-    <a href="index.html" class="nav-logo">SOC Analyst</a>
-    <div class="nav-links">
-      <a href="project.html" class="nav-link">BTLO</a>
-      <a href="tools.html" class="nav-link">Tools</a>
-      <a href="certs.html" class="nav-link">Certifications</a>
-      <a href="contact.html" class="nav-link active">Contact</a>
+  <header class="navbar">
+    <div class="nav-content">
+      <h1 class="logo">SOC Analyst</h1>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="project.html" class="nav-link">Projects</a>
+        <a href="tools.html" class="nav-link">Tools</a>
+         <a href="certs.html" class="nav-link">Certificate</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main class="page">
-    <h2 class="section-title">Contact Me</h2>
-    <p class="section-subtitle">Feel free to reach out to me via any of the platforms below:</p>
+  <main class="contact-main">
+    <h2>Let's Connect</h2>
+    <p>If you want to collaborate, ask something, or just say hi — feel free to reach out.</p>
+
+    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
 
     <div class="contact-links">
-      <a href="mailto:arhaamharris8@gmail.com" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Send email to Arhaam Harris">Gmail</a>
-      <a href="https://github.com/decode330123" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Visit GitHub Profile">GitHub</a>
-      <a href="https://blueteamlabs.online/public/user/ade36743379569aa780e27" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="View BTLO Profile">BTLO Profile</a>
+      <a href="mailto:arhaamharris8@gmail.com" target="_blank">Email</a>
+      <a href="https://github.com/decode330123" target="_blank">GitHub</a>
+      <a href="https://blueteamlabs.online/public/user/ade36743379569aa780e27" target="_blank">BTLO</a>
     </div>
   </main>
 
+  <footer>
+    <p>&copy; 2025 SOC Analyst | Contact</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
 
 
