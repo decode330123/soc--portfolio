@@ -1,24 +1,30 @@
-// script.js
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Smooth scroll effect
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+// Smooth scroll for in-page links (if any)
+document.querySelectorAll('a.nav-link').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href.startsWith('#')) {
       e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
+      document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+    }
   });
+});
 
-  // Navigation click fade effect
-  const links = document.querySelectorAll("nav a");
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      document.body.classList.add("fade-out");
-      setTimeout(() => {
-        document.body.classList.remove("fade-out");
-      }, 500);
-    });
+// Add to script.js
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
   });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
 });
