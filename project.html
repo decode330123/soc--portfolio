@@ -2,96 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Projects - SOC Analyst</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – SOC Analyst Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
 </head>
 <body>
-
-<div id="loader"></div>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a href="index.html" class="navbar-brand">SOC Analyst</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navLinks">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a href="project.html" class="nav-link active">Projects</a></li>
-        <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
-        <li class="nav-item"><a href="certs.html" class="nav-link">Certifications</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-        <li class="nav-item"><a href="sigma.html" class="nav-link">Sigma Rules</a></li>
-      </ul>
+  <header class="navbar">
+    <div class="nav-content">
+      <h1 class="logo">SOC Analyst</h1>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="project.html" class="nav-link active">Projects</a>
+        <a href="tools.html" class="nav-link">Tools</a>
+        <a href="certs.html" class="nav-link">Certificate</a> 
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
     </div>
-  </div>
-</nav>
+  </header>
 
-<main class="container my-5">
+  <main>
+    <section class="hero-section">
+      <h2>Projects</h2>
+      <p>Snapshots of Blue Team challenges, BTLO assignments, and SOC case studies.</p>
+    </section>
 
-  <!-- BTLO Challenges Section -->
-  <section id="btlo" class="mb-5">
-    <h2>BTLO Challenges</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <embed src="assets/pdfs/Report.pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
-          <div class="card-body">
-            <p class="card-text">Investigation 1</p>
-          </div>
-        </div>
+    <!-- Existing cards grid -->
+    <section class="content-grid">
+      <div class="card">
+        <h3>BTLO – ThePackage</h3>
+        <p>Recovered deleted files and extracted flags using forensic tools</p>
+        <iframe src="assets/pdfs/Employee_of_the_Year_Report.pdf.pdf" title="Employee of the Year Report"></iframe>
       </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <embed src="assets/pdfs/converted_text (1).pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
-          <div class="card-body">
-            <p class="card-text">Investigation 2</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <embed src="assets/pdfs/Employee_of_the_Year_Report.pdf.pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
-          <div class="card-body">
-            <p class="card-text">Investigation 3</p>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <embed src="assets/pdfs/Paranoid_Report.pdf.pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
-          <div class="card-body">
-            <p class="card-text">Investigation 4</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Wireshark Projects Section -->
-  <section id="wireshark" class="mb-5">
-    <h2>Wireshark Projects</h2>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
-      <!-- Example card, add more projects here -->
-      <div class="col">
-        <div class="card h-100 shadow-sm">
-          <embed src="assets/pdfs/wireshark_project_example.pdf" type="application/pdf" class="card-img-top" style="height: 200px;" />
-          <div class="card-body">
-            <p class="card-text">Wireshark Analysis 1</p>
-          </div>
-        </div>
+      <div class="card">
+        <h3>BTLO – TheParanoid</h3>
+        <p>Traced brute-force, enumeration, and privilege escalation (CVE-2021-3156) attack flow with key security insights.</p>
+        <iframe src="assets/pdfs/Paranoid_Report.pdf.pdf" title="Paranoid Report"></iframe>
       </div>
-      <!-- Add more Wireshark projects similarly -->
-    </div>
-  </section>
+      
+      <div class="card">
+        <h3>BTLO – Shiba Insider Case</h3>
+        <p>Analyzed Shiba Insider BTLO challenge to uncover attacker using PCAP and steganography.</p>
+        <iframe src="assets/pdfs/converted_text (1).pdf" title="Shiba Insider Case Report"></iframe>
+      </div>
+      <div class="card">
+        <h3> </h3>
+        <p>Explored MITRE D3FEND techniques and tools for cyber defense.</p>
+        <iframe src="assets/pdfs/Report.pdf" title=" D3FEND Investigation"></iframe>
+      </div>
+    </section>
 
-  <!-- You can add more project sections below as needed -->
-
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <footer>
+    <p>&copy; 2025 SOC Analyst | Crafted with passion</p>
+  </footer>
 </body>
 </html>
+
