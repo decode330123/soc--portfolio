@@ -28,5 +28,11 @@ const appearOnScroll = new IntersectionObserver((entries, observer) => {
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+menuToggle.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
 
 
