@@ -408,4 +408,39 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+/* Hide toggle on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: var(--midnight-bg);
+    position: absolute;
+    top: 60px; /* below header */
+    right: 0;
+    width: 200px;
+    border-left: 1px solid var(--line-light);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav .nav-link {
+    margin: 1rem;
+  }
+}
 
