@@ -408,7 +408,7 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-/* Hide toggle on desktop */
+/* Hide hamburger on desktop */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -425,10 +425,11 @@ footer {
     flex-direction: column;
     background: var(--midnight-bg);
     position: absolute;
-    top: 60px; /* below header */
+    top: 60px;
     right: 0;
-    width: 200px;
-    border-left: 1px solid var(--line-light);
+    width: 100%;
+    border-top: 1px solid var(--line-light);
+    padding: 1rem 0;
   }
 
   nav.open {
@@ -440,7 +441,8 @@ footer {
   }
 
   nav .nav-link {
-    margin: 1rem;
+    margin: 0.8rem 0;
+    text-align: center;
   }
 }
 
